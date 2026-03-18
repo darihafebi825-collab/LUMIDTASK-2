@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 
 // Layout
@@ -26,7 +26,7 @@ import BlogPage from './pages/BlogPage';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
-// Detail pages (current filenames)
+// Detail pages
 import ProjectDetail from './pages/Project detail';
 import BlogDetail from './pages/Bloagdetail';
 
