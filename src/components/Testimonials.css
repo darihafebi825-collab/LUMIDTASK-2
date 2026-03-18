@@ -1,0 +1,165 @@
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.testimonials-section {
+  background: #0f0f0f;
+  padding: 72px 0 80px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 52px;
+  padding: 0 24px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #aaa;
+  margin-bottom: 18px;
+}
+
+.section-label::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e05a3a;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: clamp(30px, 5vw, 56px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #777;
+  margin: 0;
+}
+
+.marquee-row-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marquee-row-wrap + .marquee-row-wrap {
+  margin-top: 24px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track.left {
+  animation: marquee-left 40s linear infinite;
+}
+
+.marquee-track.right {
+  animation: marquee-right 48s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Card ── */
+.t-card {
+  background: #131313;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 36px 32px 28px;
+  width: 460px;
+  min-height: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s;
+}
+
+.t-card:hover {
+  border-color: #2e2e2e;
+}
+
+.t-quote {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #cccccc;
+  margin: 0 0 32px;
+  flex: 1;
+  font-weight: 400;
+}
+
+.t-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.t-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid #2a2a2a;
+}
+
+.t-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.t-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.t-role {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+}
+
+.t-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #bbb;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.t-star {
+  color: #e05a3a;
+  font-size: 14px;
+}

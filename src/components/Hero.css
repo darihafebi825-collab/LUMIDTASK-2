@@ -1,0 +1,129 @@
+/* ─── Hero ────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* ─── Background image ────────────────────────────────────────────── */
+.hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+[data-theme="light"] .hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 234, 0.05) 0%,
+    rgba(245, 240, 234, 0.2) 50%,
+    rgba(245, 240, 234, 0.75) 100%
+  );
+}
+
+/* ─── Bottom content row ──────────────────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Left: copyright + big title */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-copy {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+[data-theme="light"] .hero-copy {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(40px, 6.5vw, 88px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+}
+[data-theme="light"] .hero-title {
+  color: #0a0a0a;
+}
+
+/* Right: tagline */
+.hero-tagline {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+  max-width: 380px;
+  margin: 0;
+  flex-shrink: 0;
+}
+[data-theme="light"] .hero-tagline {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 40px;
+  }
+
+  .hero-title {
+    white-space: normal;
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .hero-tagline {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(30px, 11vw, 44px);
+  }
+}

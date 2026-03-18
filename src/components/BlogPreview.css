@@ -1,0 +1,149 @@
+.blog-section {
+  background: #fff;
+  padding: 72px 60px 80px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+}
+
+.blog-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 48px;
+  gap: 24px;
+}
+
+.blog-title-heading {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  grid-column: 1;
+}
+
+.blog-title-heading span {
+  color: #aaa;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.blog-subtitle {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  grid-column: 2;
+}
+
+.blog-view-all {
+  grid-column: 3;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border: 1.5px solid #222;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.blog-view-all:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.blog-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f5f5f5;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+.blog-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card-content {
+  padding: 20px 24px 24px;
+}
+
+.blog-date {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.blog-card-title {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.blog-card:hover .blog-card-title {
+  color: #222;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .blog-section {
+    padding: 60px 24px 72px;
+  }
+  .blog-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  .blog-subtitle { 
+    grid-column: 1; 
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .blog-view-all { 
+    grid-column: 1; 
+    justify-self: center; 
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card-content {
+    padding: 16px 20px 20px;
+  }
+  .blog-view-all {
+    padding: 12px 20px;
+  }
+}
