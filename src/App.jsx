@@ -47,6 +47,77 @@ function Home() {
   );
 }
 
+// Fixed Buttons Component
+function FixedButtons() {
+  const containerStyle = {
+    position: 'fixed',
+    bottom: '30px',
+    right: '24px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+    zIndex: 9999,
+  };
+
+  const btnStyle = {
+    background: '#fff',
+    color: '#111',
+    border: '1.5px solid #ccc',
+    padding: '12px 22px',
+    fontSize: '14px',
+    fontWeight: '600',
+    borderRadius: '6px',
+    boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+    textDecoration: 'none',
+    whiteSpace: 'nowrap',
+    cursor: 'pointer',
+    display: 'block',
+    textAlign: 'center',
+    transition: 'all 0.2s ease',
+  };
+
+  return (
+    <div style={containerStyle}>
+      <a
+        href="https://polar.sh/checkout/polar_c_O1PUhK76wTozrXPBh9rb7vC9jm82LadGcyFH20xdJJl"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={btnStyle}
+        onMouseEnter={e => {
+          e.currentTarget.style.background = '#111';
+          e.currentTarget.style.color = '#fff';
+          e.currentTarget.style.borderColor = '#111';
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.background = '#fff';
+          e.currentTarget.style.color = '#111';
+          e.currentTarget.style.borderColor = '#ccc';
+        }}
+      >
+        Buy Template - $99
+      </a>
+      <a
+        href="https://thaer.shop/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={btnStyle}
+        onMouseEnter={e => {
+          e.currentTarget.style.background = '#111';
+          e.currentTarget.style.color = '#fff';
+          e.currentTarget.style.borderColor = '#111';
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.background = '#fff';
+          e.currentTarget.style.color = '#111';
+          e.currentTarget.style.borderColor = '#ccc';
+        }}
+      >
+        More Templates
+      </a>
+    </div>
+  );
+}
+
 function App() {
   return (
     <ThemeProvider>
@@ -64,6 +135,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <FixedButtons />  {/* ← Stays fixed on every page */}
       </Router>
     </ThemeProvider>
   );
