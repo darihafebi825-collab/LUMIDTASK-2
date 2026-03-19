@@ -10,7 +10,7 @@ This project converts a Framer-based design into a fully functional React applic
 
 ## 🖥️ Live Demo
 
-🔗 **[https://scarlet-studio.vercel.app/](https://scarlet-studio.vercel.app/)**
+🔗 **[https://stupendous-travesseiro-c58b95.netlify.app/)**
 
 ## 🛠️ Tech Stack
 
